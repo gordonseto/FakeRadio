@@ -1,5 +1,9 @@
 package com.gordonseto.fakeradio.Services;
 
+import android.graphics.Rect;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+
 import com.gordonseto.fakeradio.Model.Station;
 
 import java.util.ArrayList;
@@ -43,4 +47,6 @@ public class DataService {
         ArrayList<Station> list = new ArrayList<>();
         return list;
     }
+
 }
+

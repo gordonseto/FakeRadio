@@ -1,6 +1,7 @@
 package com.gordonseto.fakeradio.Fragments;
 
 import android.content.Context;
+import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -84,6 +85,7 @@ public class StationsFragment extends Fragment {
         }
 
         recyclerView.setAdapter(adapter);
+        recyclerView.addItemDecoration(new HorizontalSpaceItemDecorator(30));
 
         return v;
     }
@@ -112,5 +114,20 @@ public class StationsFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+}
+
+class HorizontalSpaceItemDecorator extends RecyclerView.ItemDecoration {
+
+    private final int spacer;
+
+    public HorizontalSpaceItemDecorator(int spacer) {
+        this.spacer = spacer;
+    }
+
+    @Override
+    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+        super.getItemOffsets(outRect, view, parent, state);
+        outRect.right = spacer;
     }
 }

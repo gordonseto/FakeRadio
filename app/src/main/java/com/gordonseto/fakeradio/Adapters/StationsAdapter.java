@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.gordonseto.fakeradio.Activities.MainActivity;
 import com.gordonseto.fakeradio.Holders.StationViewHolder;
 import com.gordonseto.fakeradio.Model.Station;
 import com.gordonseto.fakeradio.R;
@@ -24,10 +25,16 @@ public class StationsAdapter extends RecyclerView.Adapter<StationViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(StationViewHolder holder, int position) {
-        Station station = stations.get(position);
+    public void onBindViewHolder(StationViewHolder holder, final int position) {
+        final Station station = stations.get(position);
         holder.updateUI(station);
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.getMainActivity().loadDetailsScreen(station);
+            }
+        });
     }
 
     @Override

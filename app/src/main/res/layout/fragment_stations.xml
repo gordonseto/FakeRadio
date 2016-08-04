@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.gordonseto.fakeradio.Fragments.StationsFragment">
+    tools:context="com.gordonseto.fakeradio.Fragments.StationsFragment"
+    android:padding="5dp">
 
     <include layout="@layout/content_stations_recycler"/>
 
